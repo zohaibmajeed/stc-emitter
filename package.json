@@ -4,7 +4,6 @@
   "description": "To emit events to the client",
   "main": "src/index.js",
   "scripts": {
-    "test": "node --inspect tests/test.js",
     "make-docs": "jsdoc2md src/index.js"
   },
   "keywords": [
