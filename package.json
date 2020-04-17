@@ -4,7 +4,7 @@
   "description": "To emit events to the client",
   "main": "src/index.js",
   "scripts": {
-    "make-docs": "jsdoc2md src/index.js"
+    "generate-docs": "jsdoc2md src/index.js"
   },
   "keywords": [
     "server-events",
