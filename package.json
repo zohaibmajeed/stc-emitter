@@ -1,0 +1,21 @@
+{
+  "name": "stc-emitter",
+  "version": "1.0.0",
+  "description": "To emit events to the client",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --inspect tests/test.js",
+    "make-docs": "jsdoc2md src/index.js"
+  },
+  "keywords": [
+    "server-events",
+    "fire",
+    "client",
+    "events"
+  ],
+  "author": "Zohaib Majeed",
+  "license": "MIT",
+  "devDependencies": {
+    "jsdoc-to-markdown": "^5.0.3"
+  }
+}
