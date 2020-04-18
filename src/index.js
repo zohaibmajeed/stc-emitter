@@ -15,8 +15,8 @@ const doesNotIncludeOtherThan = (arr, ...entries) => {
 class ListenerClient {
 
     /**
-     * Create the instance of ListenerClient.
-     * @param {http.ServerResponse} response  The response object
+     * Creates the instance of ListenerClient.
+     * @param {http.ServerResponse} response - The response object
      */
 
     constructor(response) {
@@ -29,11 +29,11 @@ class ListenerClient {
 
     /**
      * Emit the event to the client.
-     * @param   {string} [event]    The event being fired
-     * @param   {string} data       Data of the event
-     * @param   {Object} [options]  Other options such as id, retry
-     * @param   {string} options.id
-     * @param   {number} options.retry
+     * @param   {string} [event]          - The event being fired
+     * @param   {string} data             - Data of the event
+     * @param   {Object} [options]        - Other options such as id, retry
+     * @param   {string} options.id       - The id of the event. If the connection somehow ends, the browser will try to reconnect and the id you passed to the client last time will be included in the reconnect request as 'Last-Event-ID' http header. Client agent exposes it as he 'lastEventId' property of the event.
+     * @param   {number} options.retry    - This is often passed when the server is going to disconnect the client. This specifies that after how many milliseconds the browser should reconnect. For example, if server passes retry with value 5000 and disconnects. The client will try to reconnect after 5000 milliseconds.
      */
 
     emit(...args) {
@@ -110,8 +110,8 @@ class Audience {
     }
 
     /**
-     * Add the client to the Audience.
-     * @param {(ListenerClient|http.ServerResponse)} listner 
+     * Adds the client to the Audience.
+     * @param {(ListenerClient|http.ServerResponse)} listner
      */
 
     add(listner) {
@@ -125,7 +125,6 @@ class Audience {
         emitter.response.emitterId = emitterId;
 
         emitter.response.once('close', () => {
-            console.log('Closed');
             this.listners = this.listners.filter(elm => elm.response.emitterId !== emitterId);
             emitter.response.end();
         });
@@ -135,9 +134,7 @@ class Audience {
 
     /**
      * Emits the events to all the clients in the Audience.
-     * @param   {string} [event]    The event being fired
-     * @param   {string} data       Data of the event
-     * @param   {object} [options]  Other options such as id, retry
+     * Accepts the same arguments as the ListenerClient.emit.
      */
 
     deliver(...args) {
