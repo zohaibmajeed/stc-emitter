@@ -9,17 +9,14 @@ const doesNotIncludeOtherThan = (arr, ...entries) => {
 
 /**
  * Class representing the Emitter which emits the events to the
- * client.
- * 
- * Note:
- * It does not inharit the node's EventEmitter class.
+ * client (It does not inharit the node's EventEmitter class).
  */
 
 class ListenerClient {
 
     /**
      * Create the instance of ListenerClient.
-     * @param {http.ServerResponse} response - The response object
+     * @param {http.ServerResponse} response  The response object
      */
 
     constructor(response) {
@@ -32,12 +29,11 @@ class ListenerClient {
 
     /**
      * Emit the event to the client.
-     * @param   {number} [event]   - The event being fired
-     * @param   {string} data      - Data of the event
-     * @param   {Object} [options] - Other options such as id, retry
+     * @param   {string} [event]    The event being fired
+     * @param   {string} data       Data of the event
+     * @param   {Object} [options]  Other options such as id, retry
      * @param   {string} options.id
      * @param   {number} options.retry
-     * @returns {void}
      */
 
     emit(...args) {
@@ -139,10 +135,9 @@ class Audience {
 
     /**
      * Emits the events to all the clients in the Audience.
-     * @param   {number} [event]   - The event being fired
-     * @param   {string} data      - Data of the event
-     * @param   {object} [options] - Other options such as id, retry
-     * @returns {void}
+     * @param   {string} [event]    The event being fired
+     * @param   {string} data       Data of the event
+     * @param   {object} [options]  Other options such as id, retry
      */
 
     deliver(...args) {

@@ -1,20 +1,21 @@
 {
   "name": "stc-emitter",
   "version": "1.0.0",
-  "description": "To emit events to the client",
+  "description": "Node.js package for sending events from server to the client.",
   "main": "src/index.js",
   "scripts": {
-    "generate-docs": "jsdoc2md src/index.js"
+    "test": "node test/test.js",
+    "generate-api-docs": "jsdoc2md src/index.js"
   },
   "keywords": [
     "server-events",
-    "fire",
+    "emit",
     "client",
-    "events"
+    "events",
+    "server-sent events",
+    "emit events from server to client"
   ],
   "author": "Zohaib Majeed",
   "license": "MIT",
-  "devDependencies": {
-    "jsdoc-to-markdown": "^5.0.3"
-  }
+  "devDependencies": {}
 }
