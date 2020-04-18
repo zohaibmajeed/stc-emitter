@@ -21,7 +21,7 @@ const { ListenerClient, Audience } = require('stc-emitter');
 
 const app = express();
 const scoreAud = new Audience();
-foo.on( 'bar', baz => scoreAud.deliever('scoreUpdate', baz) );
+foo.on( 'bar', baz => scoreAud.deliver('scoreUpdate', baz) );
 
 app.get('/score-emitter', (req, res) => {
     scoreAud.add(res);
