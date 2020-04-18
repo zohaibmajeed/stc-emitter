@@ -66,4 +66,4 @@ For complete client-side guide [visit MDN](https://developer.mozilla.org/en-US/d
 
 API
 ===
-See [API documentation](http://foo.bar).
+See [API documentation](https://github.com/zohaibmajeed/stc-emitter/blob/master/API.md).
