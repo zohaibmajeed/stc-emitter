@@ -8,18 +8,18 @@ Class representing the Emitter which emits the events to the client (It does not
 
 Creates the instance of ListenerClient.
 
- * **Parameters:** `{http.ServerResponse}` — response - The response object
+ * **Parameters:** `response` — `http.ServerResponse` — The response object
 
 ## `emit(...args)`
 
-Emit the event to the client.
+Emit the event to the client. Pass arguments like this: emit(event, data) or emit(data, options) or emit(event, data, options).
 
  * **Parameters:**
-   * `{string}` — [event]          - The event being fired
-   * `{string}` — data             - Data of the event
-   * `{Object}` — [options]        - Other options such as id, retry
-   * `{string}` — options.id       - The id of the event. If the connection somehow ends, the browser will try to reconnect and the id you passed to the client last time will be included in the reconnect request as 'Last-Event-ID' http header. Client agent exposes it as he 'lastEventId' property of the event.
-   * `{number}` — options.retry    - This is often passed when the server is going to disconnect the client. This specifies that after how many milliseconds the browser should reconnect. For example, if server passes retry with value 5000 and disconnects. The client will try to reconnect after 5000 milliseconds.
+   * `[event]` — `string` — The event being fired. If this is skipped, data will be sent without an event name, client has to listen the 'message' event to recieve the data.
+   * `data` — `(string|object)` — Data of the event. If object is passed, it will be converted to string using JSON.stringify() and the client has to parse it using JSON.parse().
+   * `[options]` — `Object` — Other options such as id, retry
+   * `options.id` — `string` — The id of the event. If the connection somehow ends, the browser will try to reconnect and the id you passed to the client last time will be included in the reconnect request as 'Last-Event-ID' http header. Client agent exposes it as the 'lastEventId' property of the event.
+   * `options.retry` — `number` — This is often passed when the server is going to disconnect the client. This specifies that after how many milliseconds the browser should reconnect. For example, if server passes retry with value 5000 and disconnects. The client will try to reconnect after 5000 milliseconds.
 
 ## `class Audience`
 
@@ -29,7 +29,7 @@ Class representing the Clients listning the same events.
 
 Adds the client to the Audience.
 
- * **Parameters:** `{(ListenerClient|http.ServerResponse)}` — listner
+ * **Parameters:** `listner` — `(ListenerClient|http.ServerResponse)` — 
 
 ## `deliver(...args)`
 
