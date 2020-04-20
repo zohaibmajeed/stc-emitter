@@ -1,7 +1,7 @@
 {
   "name": "stc-emitter",
-  "version": "1.0.4",
-  "description": "Node.js package for sending events from server to the client.",
+  "version": "1.0.6",
+  "description": "Node.js package for emitting events from server to the client.",
   "main": "src/index.js",
   "scripts": {},
   "keywords": [
@@ -10,7 +10,10 @@
     "client",
     "events",
     "server-sent events",
-    "emit events from server to client"
+    "emit events from server to client",
+    "sse",
+    "event-emitter",
+    "event driven communication between server and client"
   ],
   "repository": "github:zohaibmajeed/stc-emitter",
   "author": "Zohaib Majeed",
