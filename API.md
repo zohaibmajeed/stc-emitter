@@ -12,7 +12,7 @@ Creates the instance of ListenerClient.
 
 ## `emit(...args)`
 
-Emit the event to the client. Pass arguments like this: emit(event, data) or emit(data, options) or emit(event, data, options).
+Emit the event to the client. Pass arguments like this: emit(event, data) or emit(data, options) or emit(event, data, options) or emit(data).
 
  * **Parameters:**
    * `[event]` — `string` — The event being fired. If this is skipped, data will be sent without an event name, client has to listen the 'message' event to recieve the data.
